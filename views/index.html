@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="download()">下载</button>
+    <%arr.forEach(function(item){%>
+        <img src="<%-item.href%>" alt="">
+    <%})%>
+    <script src='https://cdn.bootcss.com/jquery/2.0.0/jquery.js'></script>
+    <script>
+        // 点击按钮 发起ajax请求,实现下载功能
+        function download(){
+            $.ajax({
+                url:'download.do',
+                type:'get',
+                data:{a:1},
+                success:function(result){
+                    console.log(arr)
+                }
+            })
+        }
+    </script>
+</body>
+</html>
